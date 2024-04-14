@@ -1,0 +1,76 @@
+body {
+  display: flex;
+  justify-content: center;
+  background-color: #f9f9f9;
+  font-family: 'GriffithGothic Cond Thin', sans-serif;
+  /* Firefox compatibility */
+  height: calc(100vh - 16px);
+}
+
+input[type='radio' i] {
+  width: 25px;
+  height: 25px;
+  margin: 0;
+  accent-color: var(--accent-2-color);
+}
+
+button {
+  padding: 10px;
+
+  z-index: 2;
+  font-family: 'GriffithGothic Cond Thin', sans-serif;
+
+  background-color: white;
+  border: none;
+
+  color: #2e5649;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & .icon {
+    font-size: 1.25em;
+    margin-left: 10px;
+  }
+}
+
+p {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.home-content {
+  max-height: none;
+}
+
+.home-content,
+.login-content {
+  max-width: 1000px;
+
+  flex: 1;
+  border: 1px solid #d7d7d7;
+
+  background-color: white;
+  /*
+  Site was originally created to have a nice background image. 
+  If you wish see the original look at readme.
+  
+  background-image: url('../images/background.jpg');
+  background-size: cover;
+  background-position: center, center;
+  background-attachment: unset; */
+}
+
+.home-content {
+  background-size: contain;
+}
+
+.container-bg {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.95;
+}

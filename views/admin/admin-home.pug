@@ -1,0 +1,41 @@
+div 
+ h1 Vieraslista
+ h2 Ilmoittautuneita yhteensä: #{guests.length}
+
+ h1 Osallistujat (#{attendingGuests.length})
+ table 
+  thead
+   tr
+    th Id
+    th Nimi 
+    th Ruokavalio
+    th Muuta lisätietoa
+    th Aikaleima 
+    th Sessio Id
+  tbody
+    each guest in attendingGuests
+     tr
+      td #{guest.id}
+      td #{guest.name}
+      td #{guest.diet}
+      td #{guest.other_information}
+      td #{guest.create_date.toLocaleString()}
+      td #{guest.session_id}
+
+ h1 Poissaolevat (#{notAttendingGuests.length})
+  table 
+   thead
+    tr 
+     th Id
+     th Nimi 
+     th Muuta lisätietoa
+     th Aikaleima 
+     th Sessio Id
+   tbody
+     each guest in notAttendingGuests
+      tr
+       td #{guest.id}
+       td #{guest.name}
+       td #{guest.other_information}
+       td #{guest.create_date.toLocaleString()}
+       td #{guest.session_id}

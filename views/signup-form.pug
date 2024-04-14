@@ -1,0 +1,28 @@
+if name 
+ div(class="t-center f-1 c-white p-md mb-md bg-c-accent") Kiitos ilmoittautumisestasi, #{name}!
+ button(class="b-green f-1  " hx-post="/signup-again" hx-target="#signup")  
+   span Paina tästä ilmoittaaksesi lisää vieraita
+   span(class="icon material-symbols-outlined") emoji_people
+else
+ form(class="flex-column zi-2 f-1_2" hx-post="/save-signup" hx-target="#signup" hx-swap="innerHTML show:#signup-container:top")
+  div(class="flex-column-start bb-solid-primary")
+   div(class="flex-center w-100 mb-sm")
+    label(class="flex-1" for="attending") Osallistun
+    input(class="b-xs b-c-accent-2" name="attending" id="attending_yes" type="radio" value="true" hx-post="/attending" hx-target="#signup" width="30" height="30" checked=(!!attending)) 
+   div(class="flex-center w-100 mb-md")
+    label(class="flex-1" for="not_attending") En osallistu
+    input(name="attending" id="not_attending" type="radio" value="false" hx-post="/not-attending" hx-target="#signup" checked=(attending == false))
+  div(class="name flex-column-start mt-md")
+   label(class="" for="name") Nimi
+   input(name="name" id="name" class="w-100 p-sm b-xs b-green" required disabled=(attending == undefined))
+  div(class="flex-column-start mt-sm")
+   label(class="" for="diet") Erityisruokavaliot ja allergiat
+   textarea(class="w-100 p-sm b-xs b-green" id="diet" name="diet" rows="5" cols="33" disabled=(attending !== true))
+  div(class="flex-column-start mt-sm")
+   label(class="" for="greetings") Muita terveisiä 
+   textarea(class="w-100 p-sm b-xs b-green" id="greetings" name="greetings" rows="5" cols="33" disabled=(attending == undefined))
+  button(disabled=(attending == undefined) class="mt-md b-green f-1")
+   span Tallenna
+   span(class="icon material-symbols-outlined") save
+  div(class="flex-column-start mt-sm text-center") 
+   span Mikäli ilmoittautuminen ei onnistu lomakkeen kautta, voit myös ilmoittaa tulostasi hääparille puhelimitse

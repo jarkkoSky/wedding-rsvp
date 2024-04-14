@@ -1,0 +1,11 @@
+div(class="login-content")
+ header(class="flex-column-center relative pt-md") 
+  div(class="f-header f-5 zi-2 m-0") Morsian 
+  div(class="f-header f-5 zi-2 m-0") &
+  div(class="f-header f-5 zi-2 m-0") Sulhanen
+ 
+  div(class='container-bg bg-c-white')
+ div(class='w-100 relative')
+  form(class="flex-column-center p-y-md")
+    input(class="f-text zi-2 p-md f-1_5 b-shadow b-r-md b-xs b-c-accent-2" name="password" placeholder='Syötä pääsykoodi' required hx-target="body" hx-trigger="keyup changed" hx-post="/password")
+  div(class="container-bg bg-c-accent")

@@ -1,0 +1,48 @@
+mixin boxHeader(title)
+  div(class="flex-center f-2_5 f-header zi-2 text-center")
+    | #{title}
+
+div
+ div(class="home-content")
+  section(class='p-md relative f-1_5 flex-column-center content-box')
+    div(class="flex-center f-3 f-header zi-2 text-center")
+      | Lämpimästi tervetuloa
+    p(class="text-center mb-0 f-1_5") todistamaan, kun sanomme toisillemme tahdon
+    p(class="text-center f-1_5") 01.01.1999
+    div(class='container-bg bg-c-white')
+
+  section(class="signup flex-column-center relative content-box b-gray p-md f-1_5" id="signup-container")
+   div(class="flex-column-center c-primary zi-2 mb-md")
+      span(class="f-2_5 mb-md f-header")
+       | Ilmoittautuminen
+   div(id="signup" class="zi-2")
+    include signup-form
+   div(class='container-bg bg-c-white')
+
+  section(class='b-gray p-md relative f-1_5 flex-column-center content-box')
+    +boxHeader('Aikataulu')
+    p
+      b 14:00 
+      | Aikataulu infoa
+    p
+      b 15:00 
+      | Aikataulu infoa
+    p
+      b 16:00 
+      | Aikataulu infoa
+    p(class="text-center lh-1_5") 
+      | Tähän yleistä tekstiä esim. aikataulusta ja juhlista
+    div(class='container-bg bg-c-white')
+
+  section(class='b-gray p-md relative f-1_5 flex-column-center content-box')
+    +boxHeader('Content 1')
+    p(class="lh-1_5 text-center")
+      | Tähän voi laittaa kaikenlaista infoa
+    div(class='container-bg bg-c-white')
+
+  section(class='b-gray p-md relative f-1_5 flex-column-center content-box')
+    +boxHeader('Content 2')
+    p(class="lh-1_5 text-center")
+      | Kopioi content laatikoita lisää tarpeen mukaan
+    div(class='container-bg bg-c-white')
+
